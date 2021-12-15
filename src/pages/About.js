@@ -4,7 +4,7 @@ export default function About() {
     return (
         <div>
             <Title title="About - Develop"/>
-            <img src={logo} />
+            <img src={logo} alt="Logo"/>
         </div>
     )
 }

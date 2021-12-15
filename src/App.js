@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button, Alert, Card, Container, Navbar, Nav } from 'react-bootstrap'
+import { Button, Card, Container, Navbar, Nav } from 'react-bootstrap'
 
 import './App.css';
 import { Outlet, Route, Routes } from 'react-router';
