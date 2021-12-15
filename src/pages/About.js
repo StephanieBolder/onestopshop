@@ -3,8 +3,8 @@ import logo from '../assets/logo192.png'
 export default function About() {
     return (
         <div>
-            <Title title="About"/>
-            <img src={logo} />
+            <Title title="About - Develop"/>
+            <img src={logo} alt="Logo"/>
         </div>
     )
 }
