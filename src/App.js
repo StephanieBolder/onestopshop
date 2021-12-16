@@ -5,6 +5,8 @@ import './App.css';
 import { Outlet, Route, Routes } from 'react-router';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import More from './pages/More';
+import logo from '../src/assets/Logo-NoBackground.png'
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
           <Route index element={<CardPage />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="more" element={<More />} />
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
@@ -31,15 +34,17 @@ export default App;
 function Layout() {
   return (
     <div>
-      <Navbar bg="light" variant="light">
+      <Navbar expand="xxl" variant="pills" defaultActiveKey="/home">
         <Container>
-          <Navbar.Brand className="navbartitle" href="#home">Momoyoga</Navbar.Brand>
-          <Nav className="justify-content-end">
-            <Nav.Link href="/contact">Contact</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Navbar.Brand href="#home"><img className="logo" src={logo} alt="Logo" /></Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="#Classes">Classes</Nav.Link>
+            <Nav.Link href="#Videos">Videos</Nav.Link>
+            <Nav.Link href="#Yogis">Yogis</Nav.Link>
+            <Nav.Link href="#Teachers">Teachers</Nav.Link>
+            <Nav.Link href="/More">More</Nav.Link>
           </Nav>
-
         </Container>
       </Navbar>
       <Container>
@@ -74,6 +79,6 @@ function CardPage() {
 
 function NoMatch() {
   return (
-    <div>About</div>
+    <div>Test</div>
   )
 }

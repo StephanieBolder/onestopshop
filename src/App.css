@@ -13,18 +13,17 @@
   }
 }
 
+body {
+  background-color: #FAFAFA;
+}
+
 .App-header {
-  background-color: #FCFCFC;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -36,12 +35,47 @@
   }
 }
 
-.navbar .navbartitle {
-  color:#FF4658;
+.logo {
+  height: 30px;
 }
 
-.titlecard {
-  color: red;
+.nav-link {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #999999;
+}
+
+.nav-link:hover {
+  color: #444444;
+}
+
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.PageTitle {
+  font-family: 'Roboto', 'Arial';
   font-weight: 200;
-  font-size: 30px;
+  font-size: 20px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: #0D6EFD;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.card-link:hover {
+  color: #24527C;
+}
+
+.container-card {
+  margin-left: 40px;
 }
