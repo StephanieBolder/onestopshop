@@ -79,3 +79,17 @@ body {
 .container-card {
   margin-left: 40px;
 }
+
+
+.p-10 {
+  padding: 40px;
+}
+
+.container-image {
+    bottom: 20px;
+    left: -250px;
+}
+
+.pb-40 {
+  padding-bottom: 160px;
+}

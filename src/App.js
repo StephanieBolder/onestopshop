@@ -14,7 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<CardPage />} />
-          <Route path="about" element={<About />} />
+          <Route path="about/upload" element={<About index="1"/>} />
+          <Route path="about/text" element={<About index="2"/>} />
           <Route path="contact" element={<Contact />} />
           <Route path="more" element={<More />} />
 
