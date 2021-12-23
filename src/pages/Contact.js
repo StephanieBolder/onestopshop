@@ -1,5 +1,6 @@
 import { Button, Form } from "react-bootstrap";
 import { useState } from "react";
+import { Container } from "react-bootstrap";
 
 export default function Contact() {
 
@@ -15,10 +16,12 @@ export default function Contact() {
     const [showEmail, setShowEmail] = useState(false);
 
     return (
-        <div className="mb-4">
-            <h1 className="mb-4">Customize your About page</h1>
-            <p>You are now able to add your own About page. On this page you can write about your studio, who you are, anything!</p>
-            <Button className="p-0 mb-5" variant="link">Check out a preview of the page</Button>
+        <div className="mt-5 ">
+        <Container className="bg-white p-10 text-start border rounded-3 position-relative d-flex justify-content-center">
+        <div className="mb-4 ms-5 me-5 w-50">
+            <h1 className="mb-4 fw-lighter">Customize your Contact page</h1>
+            <p className="text-black-50" >You are now able to add and customize your own Contact page. You decide yourself what information you want on this page!</p>
+            <Button className="fw-bolder p-0 mb-5 text-decoration-none" variant="link">Check out a preview of the page</Button>
             <Form action="">
                 <div className="d-flex flex-column align-items-start">
                     <Form.Group className="" controlId="formShowAddress">
@@ -30,10 +33,10 @@ export default function Contact() {
                         </Form.Group>
                         <div className="d-flex">
                             <Form.Group className="mb-3 w-50" controlId="formZipcode">
-                                <Form.Control className="" type="text" placeholder="Zipcode" value={zipcode} onChange={(e) => setZipcode(e.target.value)} />
+                                <Form.Control type="text" placeholder="Zipcode" value={zipcode} onChange={(e) => setZipcode(e.target.value)} />
                             </Form.Group>
                             <Form.Group className="mb-3 w-50" controlId="formCity">
-                                <Form.Control className="" type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} />
+                                <Form.Control type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} />
                             </Form.Group>
                         </div>
                     </div>
@@ -64,6 +67,8 @@ export default function Contact() {
                     <Button className="ms-2" variant="primary" type="submit">Save & continue</Button>
                 </div>
             </Form>
+        </div>
+        </Container>
         </div>
     )
 }

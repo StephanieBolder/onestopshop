@@ -93,3 +93,9 @@ body {
 .pb-40 {
   padding-bottom: 160px;
 }
+
+.form-check-label {
+  padding-left: 30px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
