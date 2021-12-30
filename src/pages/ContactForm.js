@@ -1,4 +1,4 @@
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Col, Card, Row } from "react-bootstrap";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import plant from '../assets/Plant.png'
@@ -61,13 +61,17 @@ export default function ContactForm({ index = 1 }) {
 
     return (
         <div className="mt-10 ">
-            <Container className="bg-white p-10 text-start border rounded-3 position-relative d-flex justify-content-center">
-                <div className="mb-4 ms-5 me-5 w-50">
+            <Row className="mb-5" xs="auto">
+                <Col><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" style={{ marginRight: "-15px" }} width="18px" fill="#0D6EFD"><path d="M0 0h24v24H0V0z" fill="none" opacity=".87" /><path d="M16.62 2.99c-.49-.49-1.28-.49-1.77 0L6.54 11.3c-.39.39-.39 1.02 0 1.41l8.31 8.31c.49.49 1.28.49 1.77 0s.49-1.28 0-1.77L9.38 12l7.25-7.25c.48-.48.48-1.28-.01-1.76z" /></svg></Col>
+                <Col><Card.Link style={{ fontSize: "15px" }} href="/more">Back</Card.Link></Col>
+            </Row>
+            <Container className="bg-white p-10 text-start border rounded-3 position-relative d-flex justify-content-center mb-5" style={{ width: "70%" }}>
+                <div className="mb-4 ms-5 me-5" style={{ width: "70%" }}>
                     <h1 className="mb-4 fw-lighter mt-5 ">Customize your Contact page</h1>
                     <p className="text-black-50" >You are now able to add and customize your own Contact page. You decide yourself what information you want on this page!</p>
                     <Button className="fw-bolder p-0 mb-5 text-decoration-none" variant="link">Check out a preview of the page</Button>
 
-                    <p className="fw-bold mt-5">Decide the information on the page</p>
+                    <p style={{ color: "#444444" }} className="fw-bold mt-3">Decide the information on the page</p>
                     <p className="text-black-50 mb-5 " >Click on the information you want on your contact page. This will be displayed above the contact form.</p>
                     {index == 1 && (
                         <Form className="mt-3 ">
@@ -111,8 +115,8 @@ export default function ContactForm({ index = 1 }) {
                             </div>
 
                             <div className="d-flex justify-content-end -me-4 mt-5 mb-5 ">
-                                <Button className="rounded-pill p-3 fw-bolder " variant="secondary">Cancel</Button>
-                                <Button className="rounded-pill p-3 ms-3 fw-bolder" onClick={nextRoute} variant="primary" type="submit">Save & continue</Button>
+                                <Button href="/more" className="secundary-button">Cancel</Button>
+                                <Button className="primary-button" onClick={nextRoute} type="submit">Save & continue</Button>
                             </div>
                         </Form>)}
                     {index == 2 && (
@@ -129,8 +133,8 @@ export default function ContactForm({ index = 1 }) {
                                     <Form.Control as="textarea" rows={6} placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore  magna aliqua. Ut enim ad minim veniam, quis nostrud  exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in  reprehenderit in voluptate velit esse cillum dolore eu  fugiat nulla pariatur. Excepteur sint occaecat cupidatat." value={text} onChange={(e) => setText(e.target.value)} />
                                 </Form.Group>
                                 <div className="d-flex justify-content-end -me-4 mt-5 mb-5 ">
-                                    <Button className="rounded-pill p-3 fw-bolder " variant="secondary">Cancel</Button>
-                                    <Button onClick={nextRoute} className="rounded-pill p-3 ms-3 fw-bolder " variant="primary" type="submit">Save & publish</Button>
+                                    <Button href="/more" className="secundary-button">Cancel</Button>
+                                    <Button className="primary-button" onClick={nextRoute} type="submit">Save & continue</Button>
                                 </div>
                             </Form>
                         </div>

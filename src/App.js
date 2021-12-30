@@ -12,6 +12,7 @@ import ContactPage from './pages/ContactPage';
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 
+
 function App() {
   return (
     <div className="App">
@@ -67,10 +68,10 @@ function Layout() {
 
   return (
     <div>
-      <Navbar  expand="xxl" variant="pills">
+      <Navbar expand="xl" variant="pills">
         <Container>
           <Navbar.Brand href="#home"><img className="logo" src={logo} alt="Logo" /></Navbar.Brand>
-          <Nav className="me-auto">
+          <Nav className="justify-content-start align-items-center navbar-collapses">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/Videos">Videos</NavLink>
             <NavLink to="/Classes">Classes</NavLink>
@@ -82,7 +83,7 @@ function Layout() {
             </div>
             )}
             {(!showAdmin && isAdmin) && (
-              <NavLink href="/more">Back to admin</NavLink>
+              <NavLink to="/more">Back to admin</NavLink>
             )}
           </Nav>
         </Container>

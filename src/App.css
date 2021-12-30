@@ -43,8 +43,8 @@ body {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: white;
-  margin-left: 20px;
-  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .PageTitle {
@@ -162,4 +162,20 @@ body {
   border: 1px solid #dce0e0;
   color: #444;
   transition: all .3s;
+}
+
+.navbar-collapses {
+  flex-direction: row;
+  display: flex;
+  justify-content: start;
+}
+
+.navbar>.container {
+  display: flex;
+  justify-content: start;
+}
+
+.ptext {
+  color: #444;
+  font-size: 15px;
 }
