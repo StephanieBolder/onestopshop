@@ -71,54 +71,56 @@ export default function ContactForm({ index = 1 }) {
                     <p className="text-black-50" >You are now able to add and customize your own Contact page. You decide yourself what information you want on this page!</p>
                     <Button className="fw-bolder p-0 mb-5 text-decoration-none" variant="link">Check out a preview of the page</Button>
 
-                    <p style={{ color: "#444444" }} className="fw-bold mt-3">Decide the information on the page</p>
-                    <p className="text-black-50 mb-5 " >Click on the information you want on your contact page. This will be displayed above the contact form.</p>
+                    
                     {index == 1 && (
-                        <Form className="mt-3 ">
-                            <div className="d-flex flex-column align-items-start">
-                                <Form.Group className="" controlId="formShowAddress">
-                                    <Form.Check className="d-inline-flex " type="checkbox" label="Address" checked={showAddress} onChange={(e) => setShowAddress(e.target.checked)} />
-                                </Form.Group>
-                                <div className="ms-5 w-100">
-                                    <Form.Group className="mb-3" controlId="formAddress">
-                                        <Form.Control type="text" placeholder="Streetname & number" disabled={!showAddress} value={address} onChange={(e) => setAddress(e.target.value)} />
+                        <div>
+                            <p style={{ color: "#444444" }} className="fw-bold mt-3">Decide the information on the page</p>
+                            <p className="text-black-50 mb-5 " >Click on the information you want on your contact page. This will be displayed above the contact form.</p>
+                            <Form className="mt-3 ">
+                                <div className="d-flex flex-column align-items-start">
+                                    <Form.Group className="" controlId="formShowAddress">
+                                        <Form.Check className="d-inline-flex " type="checkbox" label="Address" checked={showAddress} onChange={(e) => setShowAddress(e.target.checked)} />
                                     </Form.Group>
-                                    <div className="d-flex">
-                                        <Form.Group className="mb-3 w-50 me-1" controlId="formZipcode">
-                                            <Form.Control type="text" placeholder="Zipcode" disabled={!showAddress} value={zipcode} onChange={(e) => setZipcode(e.target.value)} />
+                                    <div className="ms-5 w-100">
+                                        <Form.Group className="mb-3" controlId="formAddress">
+                                            <Form.Control type="text" placeholder="Streetname & number" disabled={!showAddress} value={address} onChange={(e) => setAddress(e.target.value)} />
                                         </Form.Group>
-                                        <Form.Group className="mb-3 w-50 ms-1 " controlId="formCity">
-                                            <Form.Control type="text" placeholder="City" disabled={!showAddress} value={city} onChange={(e) => setCity(e.target.value)} />
+                                        <div className="d-flex">
+                                            <Form.Group className="mb-3 w-50 me-1" controlId="formZipcode">
+                                                <Form.Control type="text" placeholder="Zipcode" disabled={!showAddress} value={zipcode} onChange={(e) => setZipcode(e.target.value)} />
+                                            </Form.Group>
+                                            <Form.Group className="mb-3 w-50 ms-1 " controlId="formCity">
+                                                <Form.Control type="text" placeholder="City" disabled={!showAddress} value={city} onChange={(e) => setCity(e.target.value)} />
+                                            </Form.Group>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="d-flex flex-column align-items-start">
+                                    <Form.Group className="" controlId="formShowPhone">
+                                        <Form.Check className="d-inline-flex mt-2" type="checkbox" label="Telephone" checked={showPhone} value={showPhone} onChange={(e) => setShowPhone(e.target.checked)} />
+                                    </Form.Group>
+                                    <div className="ms-5 w-100">
+                                        <Form.Group className="mb-3" controlId="formPhone">
+                                            <Form.Control type="text" placeholder="06 12 34 56 78" disabled={!showPhone} value={phone} onChange={(e) => setPhone(e.target.value)} />
                                         </Form.Group>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="d-flex flex-column align-items-start">
-                                <Form.Group className="" controlId="formShowPhone">
-                                    <Form.Check className="d-inline-flex mt-2" type="checkbox" label="Telephone" checked={showPhone} value={showPhone} onChange={(e) => setShowPhone(e.target.checked)} />
-                                </Form.Group>
-                                <div className="ms-5 w-100">
-                                    <Form.Group className="mb-3" controlId="formPhone">
-                                        <Form.Control type="text" placeholder="06 12 34 56 78" disabled={!showPhone} value={phone} onChange={(e) => setPhone(e.target.value)} />
+                                <div className="d-flex flex-column align-items-start">
+                                    <Form.Group className="" controlId="formShowEmail">
+                                        <Form.Check className="d-inline-flex mt-2" type="checkbox" checked={showEmail} label="E-mail" value={showEmail} onChange={(e) => setShowEmail(e.target.checked)} />
                                     </Form.Group>
+                                    <div className="ms-5 w-100">
+                                        <Form.Group className="mb-3" controlId="formEmail">
+                                            <Form.Control type="email" placeholder="johndoe@doe.com" disabled={!showEmail} value={email} onChange={(e) => setEmail(e.target.value)} />
+                                        </Form.Group>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="d-flex flex-column align-items-start">
-                                <Form.Group className="" controlId="formShowEmail">
-                                    <Form.Check className="d-inline-flex mt-2" type="checkbox" checked={showEmail} label="E-mail" value={showEmail} onChange={(e) => setShowEmail(e.target.checked)} />
-                                </Form.Group>
-                                <div className="ms-5 w-100">
-                                    <Form.Group className="mb-3" controlId="formEmail">
-                                        <Form.Control type="email" placeholder="johndoe@doe.com" disabled={!showEmail} value={email} onChange={(e) => setEmail(e.target.value)} />
-                                    </Form.Group>
+                                <div className="d-flex justify-content-end -me-4 mt-5 mb-5 ">
+                                    <Button href="/more" className="secundary-button">Cancel</Button>
+                                    <Button className="primary-button" onClick={nextRoute} type="submit">Save & continue</Button>
                                 </div>
-                            </div>
-
-                            <div className="d-flex justify-content-end -me-4 mt-5 mb-5 ">
-                                <Button href="/more" className="secundary-button">Cancel</Button>
-                                <Button className="primary-button" onClick={nextRoute} type="submit">Save & continue</Button>
-                            </div>
-                        </Form>)}
+                            </Form>
+                        </div>)}
                     {index == 2 && (
                         <div>
                             <p className="fw-bold mt-5">Add your own text</p>
