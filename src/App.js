@@ -1,11 +1,17 @@
-import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button, Alert, Card, Container, Navbar, Nav } from 'react-bootstrap'
+import { Button, Card, Container, Navbar, Nav } from 'react-bootstrap'
 
 import './App.css';
-import { Outlet, Route, Routes } from 'react-router';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import { Outlet, Route, Routes, useMatch, useNavigate, useParams, useResolvedPath } from 'react-router';
+import AboutForm from './pages/AboutForm';
+import ContactForm from './pages/ContactForm';
+import AboutPage from './pages/AboutPage';
+import More from './pages/More';
+import logo from '../src/assets/Logo-NoBackground.png'
+import ContactPage from './pages/ContactPage';
+import { useEffect, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -13,8 +19,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<CardPage />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="about-form/upload" element={<AboutForm index="1" />} />
+          <Route path="about-form/text" element={<AboutForm index="2" />} />
+          <Route path="contact-form/contact" element={<ContactForm index="1" />} />
+          <Route path="contact-form/text" element={<ContactForm index="2" />} />
+          <Route path="about-page" element={<AboutPage />} />
+          <Route path="contact-page" element={<ContactPage />} />
+          <Route path="more" element={<More />} />
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
@@ -29,18 +40,52 @@ function App() {
 export default App;
 
 
+function NavLink({ children, to, ...props }) {
+  let resolved = useResolvedPath(to);
+  let match = useMatch({ path: resolved.pathname, end: true });
+  let isMatch = match ? match.path == match.pathNameBase : false;
+  return (
+      <Link
+        className={isMatch ? 'active-link' : 'nonactive-link'}
+        to={to}
+        {...props}
+      >
+        {children}
+      </Link>
+  );
+}
+
 function Layout() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [showAdmin, setShowAdmin] = useState(true);
+  const isAdmin = true;
+  useEffect(() => {
+    setShowAdmin(searchParams.get('as') != 'yogi');
+    
+  }, [searchParams]);
+  
+  const [activeKey, setActiveKey] = useState("1");
+
   return (
     <div>
-      <Navbar bg="light" variant="light">
+      <Navbar expand="xl" variant="pills">
         <Container>
-          <Navbar.Brand className="navbartitle" href="#home">Momoyoga</Navbar.Brand>
-          <Nav className="justify-content-end">
-            <Nav.Link href="/contact">Contact</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Navbar.Brand href="#home"><img className="logo" src={logo} alt="Logo" /></Navbar.Brand>
+          <Nav className="justify-content-start align-items-center navbar-collapses">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/Videos">Videos</NavLink>
+            <NavLink to="/Classes">Classes</NavLink>
+            {showAdmin && (
+            <div>
+              <NavLink to="/Yogis">Yogis</NavLink>
+              <NavLink to="/Teachers">Teachers</NavLink>
+              <NavLink to="/more">More</NavLink>
+            </div>
+            )}
+            {(!showAdmin && isAdmin) && (
+              <NavLink to="/more">Back to admin</NavLink>
+            )}
           </Nav>
-
         </Container>
       </Navbar>
       <Container>
@@ -75,6 +120,6 @@ function CardPage() {
 
 function NoMatch() {
   return (
-    <div>About</div>
+    <div>Test</div>
   )
 }
