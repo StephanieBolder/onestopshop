@@ -101,8 +101,8 @@ function CardPage() {
   return (
     <div>
       <div>
-        <div class="alert alert-primary" style={{ marginTop: "100px" }} role="alert">
-          You are now able to add your own contact and about page.<a href="#" class="alert-link">Check it out!</a>
+        <div class="alert alert-primary" style={{marginTop: "50px", paddingTop: "20px", paddingBottom: "20px", backgroundColor: "#E1EDFF", border: "none", borderRadius: "11px"}} role="alert">
+          You are now able to add your own contact and about page.<a href="/more" class="alert-link" style={{color: "#0d6efd", marginLeft: "5px", textDecoration: "none"}}>Check it out!</a>
         </div>
         <div className="form-cards" style={{ marginTop: "100px" }}>
           <div className="content-blob-white form-card">
