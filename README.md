@@ -30,4 +30,4 @@ In the project directory, you can run:
 
 ## License
 - [MIT](https://choosealicense.com/licenses/mit/)
-- [Momoyoga] (https://www.momoyoga.com/nl/)
+- [Momoyoga](https://www.momoyoga.com/nl/)
