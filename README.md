@@ -8,6 +8,8 @@ Finished
 ## Installation
 The project is running and working on the following website: https://elegant-lumiere-a7b4a2.netlify.app/. After opening the project, proceed to 'More', for the actual Settings page in which you find the About page and the Contact page.
 
+Please note: When using Google Chrome, the font weight is not right. When using Safari, the right font weight is shown (needs to be regular, shows bold in Google Chrome)
+
 ### Available Scripts
 
 In the project directory, you can run:
@@ -26,7 +28,7 @@ In the project directory, you can run:
 ## Programmes used
 - Visual Studio Code
 - Github
-- Google Chrome
+- Safari
 
 ## License
 - [MIT](https://choosealicense.com/licenses/mit/)
