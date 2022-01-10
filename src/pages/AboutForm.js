@@ -63,14 +63,14 @@ export default function AboutForm({ index }) {
 
 
     return (
-        <div className="mt-10">
+        <div className="mt-10 about-form">
             <Row className="mb-5" xs="auto">
                 <Col><svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" style={{ marginRight: "-15px" }} width="18px" fill="#0D6EFD"><path d="M0 0h24v24H0V0z" fill="none" opacity=".87"/><path d="M16.62 2.99c-.49-.49-1.28-.49-1.77 0L6.54 11.3c-.39.39-.39 1.02 0 1.41l8.31 8.31c.49.49 1.28.49 1.77 0s.49-1.28 0-1.77L9.38 12l7.25-7.25c.48-.48.48-1.28-.01-1.76z"/></svg></Col>
                 <Col><Card.Link style={{ fontSize: "15px" }} href="/more">Back</Card.Link></Col>
             </Row>
 
-            <Container className="bg-white p-10 text-start border rounded-3 position-relative d-flex justify-content-center mb-5" style={{ width: "70%" }}>
-                <div className="mb-4 ms-5 me-5" style={{ width: "70%" }}>
+            <Container className="bg-white p-5 p-md-10 text-start border rounded-3 position-relative d-flex justify-content-center mb-5">
+                <div className="mb-4 ms-5 me-5">
                     <div><h1 className="mb-4 fw-lighter mt-5">Customize your About page</h1>
                         <p className="text-black-50">You are now able to add your own About page. On this page you can write about your studio, who you are, anything!</p>
                         <Button className="fw-bolder p-0 mb-5 text-decoration-none" variant="link">Check out a preview of the page</Button>
