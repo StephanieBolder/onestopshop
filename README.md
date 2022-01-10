@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Finished
 
 ## Installation
-The project is running and working on the following website: https://elegant-lumiere-a7b4a2.netlify.app/
+The project is running and working on the following website: https://elegant-lumiere-a7b4a2.netlify.app/. After opening the project, proceed to 'More', for the actual Settings page in which you find the About page and the Contact page.
 
 ### Available Scripts
 
