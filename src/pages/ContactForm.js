@@ -128,7 +128,7 @@ export default function ContactForm({ index = 1 }) {
                             <Form action="">
                                 <Form.Group className="mb-3" controlId="formTitle">
                                     <Form.Label>Title</Form.Label>
-                                    <Form.Control type="text" placeholder="About our Studio" value={title} onChange={(e) => setTitle(e.target.value)} />
+                                    <Form.Control type="text" placeholder="Contact our Studio" value={title} onChange={(e) => setTitle(e.target.value)} />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formText">
                                     <Form.Label>Text</Form.Label>
